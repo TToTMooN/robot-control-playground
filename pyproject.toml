@@ -1,0 +1,24 @@
+[project]
+authors = [{name = "Lingfeng", email = "lingfengsun@berkeley.edu"}]
+dependencies = []
+name = "robot-control-playground"
+requires-python = ">= 3.11"
+version = "0.1.0"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+robot_control_playground = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+numpy = ">=2.3.2,<3"
+mujoco = ">=3.3.2,<4"
+pinocchio = ">=3.7.0,<4"
