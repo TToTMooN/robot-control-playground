@@ -1,0 +1,19 @@
+<!--
+Placeholder MJCF for the Franka Research 3 (FR3) robot.
+
+This file serves as a stand‑in for an actual MuJoCo MJCF model of the FR3
+robot.  It defines a single fixed body with no actuators so that the
+file can be parsed by MuJoCo without errors.  Replace this file with
+the MJCF generated from the FR3 URDF (e.g., using mjcf_from_urdf) to
+obtain a full simulation model.
+-->
+<mujoco model="fr3_placeholder">
+  <option timestep="0.001" gravity="0 0 -9.81"/>
+  <worldbody>
+    <body name="base_link" pos="0 0 0">
+      <geom type="box" size="0.05 0.05 0.05" rgba="0.8 0.8 0.8 1" mass="1.0"/>
+    </body>
+  </worldbody>
+  <!-- No actuators defined.  Add joint and actuator definitions when you
+       replace this placeholder with the actual FR3 MJCF. -->
+</mujoco>

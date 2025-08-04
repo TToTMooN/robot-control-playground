@@ -1,0 +1,20 @@
+<!--
+Placeholder URDF for the Franka Research 3 (FR3) robot.
+
+This file is intentionally minimal and does not describe a real robot.  To
+use the FR3 model in simulation or with Pinocchio, replace this file with
+the official URDF distributed by Franka Emika or your robotic middleware.
+
+The URDF below defines a single fixed link so that the parser does not
+fail when loading the file.  It should be replaced with a complete
+description including all links, joints and inertial properties.
+-->
+<robot name="fr3_placeholder">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+</robot>
