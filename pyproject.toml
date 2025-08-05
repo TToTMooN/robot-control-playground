@@ -22,3 +22,6 @@ robot_control_playground = { path = ".", editable = true }
 numpy = ">=2.3.2,<3"
 mujoco = ">=3.3.2,<4"
 pinocchio = ">=3.7.0,<4"
+tyro = ">=0.9.27,<0.10"
+matplotlib = ">=3.10.5,<4"
+mujoco-python-viewer = ">=0.1.4,<0.2"

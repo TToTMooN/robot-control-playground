@@ -1,23 +1,24 @@
-<!--
-Simple 1D mass–spring–damper model for testing controllers.
-
-This MJCF defines a single free body constrained to move along the x–axis
-with an attached spring–damper.  The mass can be changed programmatically
-via `MujocoSim.set_body_mass()`.
--->
+<?xml version="1.0" ?>
 <mujoco model="mass_spring">
-  <option timestep="0.001" gravity="0 0 -9.81"/>
-  <worldbody>
-    <body name="cart" pos="0 0 0">
-      <joint name="slide" type="slide" axis="1 0 0"/>
-      <geom type="box" size="0.05 0.05 0.05" rgba="0 0.5 1 1" mass="1.0"/>
-    </body>
-  </worldbody>
-  <tendon>
-    <spatial name="spring" body1="world" body2="cart" axis="1 0 0"
-            stiffness="100" damping="1" lengthspring="0.0"/>
-  </tendon>
-  <actuator>
-    <motor name="force" joint="slide" ctrllimited="false"/>
-  </actuator>
+    <option timestep="0.001" gravity="0 0 0"/>
+
+    <worldbody>
+        <body name="cart" pos="0 0 0">
+            <joint name="slide"
+                   type="slide"
+                   axis="1 0 0"
+                   springref="0"
+                   stiffness="100"
+                   damping="2"/>
+            <geom type="sphere" size="0.05" rgba="0.2 0.6 0.9 1"/>
+        </body>
+    </worldbody>
+
+    <!-- add a motor actuator on the slide joint -->
+    <actuator>
+        <motor name="u"
+               joint="slide"
+               ctrlrange="-100 100"
+               gear="1"/>
+    </actuator>
 </mujoco>
